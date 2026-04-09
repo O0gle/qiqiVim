@@ -26,3 +26,11 @@
 1. `rm -r nvim`
 2. `mv old_nvim nvim` 如果没有old_nvim可以忽略
 
+# 运行
+- 在终端上输入nvim
+- 在normal模式下输入:Lazy 可以查看安装的插件
+- 在normal模式下输入:Mason 可以查看、安装开发的插件
+
+# 快捷键
+ctrl+p 查找文件
+
