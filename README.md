@@ -104,6 +104,45 @@ nvim
 | Telescope Insert | `<C-n>` | 选中下一项 | 仅在 Telescope 面板中生效 |
 | Telescope Insert | `<C-p>` | 选中上一项 | 仅在 Telescope 面板中生效 |
 
+### Neogit 快捷键速查
+
+- 以下 git 命令是便于理解的近似对应，不代表 Neogit 内部一定逐字执行相同命令
+- `Leader` 键是 `Space`，所以 `<leader>gs` 实际按法是 `Space gs`
+
+| 场景 | 快捷键 | 功能 | 近似对应的 git 命令 |
+| --- | --- | --- | --- |
+| 打开面板 | `<leader>gs` | 打开 Neogit 状态面板 | `:Neogit` |
+| 面板内 | `?` | 打开帮助 | 无直接对应 |
+| 面板内 | `q` | 关闭当前 Neogit 窗口 | 无直接对应 |
+| 面板内 | `Tab` | 折叠或展开当前区块 | 无直接对应 |
+| 面板内 | `Enter` | 打开光标所在文件 | 无直接对应 |
+| 面板内 | `s` | 暂存当前文件或当前 hunk | `git add <file>` / `git add -p` |
+| 面板内 | `S` | 暂存所有已跟踪文件的修改和删除 | `git add -u` |
+| 面板内 | `<C-s>` | 暂存全部改动，包括新文件 | `git add --all` |
+| 面板内 | `u` | 取消暂存当前文件或当前 hunk | `git restore --staged <file>` / `git reset HEAD <file>` |
+| 面板内 | `U` | 取消暂存全部内容 | `git reset` |
+| 面板内 | `x` | 丢弃当前文件或当前 hunk 的改动 | `git restore <file>` |
+| 提交 | `c c` | 创建提交 | `git commit` |
+| 提交 | `c a` | 修改上一次提交 | `git commit --amend` |
+| 提交 | `c w` | 只修改上一次提交信息 | `git commit --amend --only` |
+| 提交窗口 | `<C-c><C-c>` | 确认提交信息并提交 | `git commit` |
+| 提交窗口 | `<C-c><C-k>` | 放弃本次提交 | 放弃提交 |
+| 推送 | `P p` | 推送到 pushRemote 或默认远端 | `git push` |
+| 推送 | `P u` | 推送到当前分支的 upstream | `git push` |
+| 拉取 | `p u` | 从 upstream 拉取到当前分支 | `git pull` |
+| 拉取 | `p p` | 从 pushRemote 拉取到当前分支 | `git pull <remote> <branch>` |
+| 拉取 | `p e` | 从其他分支或远端拉取 | `git pull <remote> <branch>` |
+| 分支 | `b l` | 切换到本地分支 | `git switch <branch>` |
+| 分支 | `b c` | 新建并切换到分支 | `git switch -c <branch>` |
+| 分支 | `b n` | 只新建分支，不切换 | `git branch <branch>` |
+| 分支 | `b m` | 重命名分支 | `git branch -m <new-branch>` |
+| 分支 | `b D` | 删除分支 | `git branch -D <branch>` |
+| Stash | `Z z` | stash 当前工作区和暂存区改动 | `git stash push` |
+| Stash | `Z p` | 应用并移除一个 stash | `git stash pop` |
+| Stash | `Z a` | 应用一个 stash 但不移除 | `git stash apply` |
+| Stash | `Z d` | 删除一个 stash | `git stash drop` |
+| Stash | `Z l` | 查看 stash 列表 | `git stash list` |
+
 ## 当前启用的主要插件
 
 - `bufferline.nvim`
