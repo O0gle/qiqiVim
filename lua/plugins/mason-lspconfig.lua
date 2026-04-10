@@ -3,9 +3,20 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
+        "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
         local group = vim.api.nvim_create_augroup("user_lsp_keymaps", { clear = true })
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+
+        if ok then
+            capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+        end
+
+        vim.lsp.config("*", {
+            capabilities = capabilities,
+        })
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = group,
