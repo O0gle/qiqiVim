@@ -5,25 +5,23 @@ return {
         "neovim/nvim-lspconfig",
     },
     config = function()
-        local lspconfig = require("lspconfig")
-        local on_attach = function(client, bufnr)
-            local opts = { noremap=true, silent=true, buffer=bufnr }
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-            vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-        end
+        local group = vim.api.nvim_create_augroup("user_lsp_keymaps", { clear = true })
+
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = group,
+            callback = function(event)
+                local opts = { noremap = true, silent = true, buffer = event.buf }
+                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+                vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+            end,
+        })
 
         require("mason-lspconfig").setup({
-            ensure_installed = { "kotlin_language_server" },
-            handlers = {
-                function(server_name)
-                    lspconfig[server_name].setup({
-                        on_attach = on_attach,
-                    })
-                end,
-            },
+            ensure_installed = { "kotlin_language_server", "ts_ls" },
+            automatic_enable = true,
         })
     end,
 }
