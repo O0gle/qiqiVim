@@ -23,6 +23,7 @@ require("lazy").setup({
   require("plugins.hop"),
   require("plugins.indent-blankline"),
   require("plugins.lualine"),
+  require("plugins.copilot"),
   require("plugins.nvim-cmp"),
   require("plugins.mason"),
   require("plugins.mason-lspconfig"),

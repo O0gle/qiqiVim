@@ -12,6 +12,7 @@ return {
         local cmp = require("cmp")
         local luasnip = require("luasnip")
         local kind_icons = {
+            Copilot = "",
             Text = "",
             Method = "󰆧",
             Function = "󰊕",
@@ -39,6 +40,7 @@ return {
             TypeParameter = "󰅲",
         }
         local source_labels = {
+            copilot = "Copilot",
             nvim_lsp = "LSP",
             luasnip = "Snippet",
             path = "Path",
@@ -74,6 +76,7 @@ return {
                 CmpItemAbbrMatchFuzzy = { fg = colors.cyan, bold = true },
                 CmpItemMenu = { fg = colors.dark5, italic = true },
                 CmpItemKindVariable = { fg = colors.fg },
+                CmpItemKindCopilot = { fg = colors.orange, bold = true },
                 CmpItemKindFunction = { fg = colors.blue },
                 CmpItemKindMethod = { fg = colors.blue },
                 CmpItemKindKeyword = { fg = colors.magenta },
@@ -156,6 +159,7 @@ return {
                 end, { "i", "s" }),
             }),
             sources = cmp.config.sources({
+                { name = "copilot" },
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
                 { name = "path" },
