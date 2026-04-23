@@ -6,12 +6,13 @@ vim.api.nvim_set_keymap('t', 'jj', '<C-\\><C-n>', { noremap = true, silent = tru
 
 -- 这也是一种非常直观的退出方式
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
-
-
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('i', '<C-h>', '<left>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-l>', '<right>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-j>', '<down>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-k>', '<up>', { noremap = true, silent = true })
 
 
 -- 将 <C-n> 映射为打开/关闭 nvim-tree
-
 vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
