@@ -1,9 +1,6 @@
 require("core")
 require("plugins")
 
-require("nvim-treesitter.install").prefer_git = false
-require("nvim-treesitter.install").compilers = { "zig" }
-
 --[[
 local im_select_path = "D:\\Downloads\\im-select.exe"
 local english_im = "1033"

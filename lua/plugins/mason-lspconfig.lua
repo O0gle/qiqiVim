@@ -18,6 +18,14 @@ return {
             capabilities = capabilities,
         })
 
+        -- 关键：单独配置 kotlin
+        vim.lsp.config("kotlin_language_server", {
+            on_attach = function(client, bufnr)
+                -- 禁用 semantic tokens
+                client.server_capabilities.semanticTokensProvider = nil
+            end,
+        })
+
         vim.api.nvim_create_autocmd("LspAttach", {
             group = group,
             callback = function(event)

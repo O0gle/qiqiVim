@@ -69,8 +69,6 @@ nvim
 | Normal | `<leader>fb` | 查找已打开的 Buffer | Telescope |
 | Normal | `<leader>fh` | 查找帮助文档标签 | Telescope |
 | Normal | `<C-n>` | 打开或关闭文件树 | nvim-tree |
-| Normal | `<leader><leader>f` | 单字符跳转 | Hop |
-| Normal | `<leader><leader>w` | 单词跳转 | Hop |
 | Normal | `<leader><leader>t` | 打开或关闭浮动终端 | ToggleTerm |
 | Normal | `<leader>gs` | 打开 Neogit 状态面板 | Neogit |
 | Normal | `<leader>1` | 跳转到第 1 个 Buffer | Bufferline |
@@ -146,7 +144,7 @@ nvim
 ## 当前启用的主要插件
 
 - `bufferline.nvim`
-- `hop.nvim`
+- `flash.nvim`
 - `lualine.nvim`
 - `mason.nvim`
 - `mason-lspconfig.nvim`

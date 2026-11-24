@@ -22,62 +22,68 @@ return {
     options = {
       icons_enabled = true,
       theme = 'auto',
-      component_separators = { left = '', right = ''},
-      section_separators = { left = '', right = ''},
+      component_separators = { left = '', right = '' },
+      section_separators = { left = '', right = '' },
       disabled_filetypes = {
         statusline = {},
-          winbar = {},
+        winbar = {},
+      },
+      ignore_focus = {},
+      always_divide_middle = true,
+      always_show_tabline = true,
+      globalstatus = false,
+      refresh = {
+        statusline = 1000,
+        tabline = 1000,
+        winbar = 1000,
+        refresh_time = 16, -- ~60fps
+        events = {
+          'WinEnter',
+          'BufEnter',
+          'BufWritePost',
+          'SessionLoadPost',
+          'FileChangedShellPost',
+          'VimResized',
+          'Filetype',
+          'CursorMoved',
+          'CursorMovedI',
+          'ModeChanged',
         },
-        ignore_focus = {},
-        always_divide_middle = true,
-        always_show_tabline = true,
-        globalstatus = false,
-        refresh = {
-          statusline = 1000,
-          tabline = 1000,
-          winbar = 1000,
-          refresh_time = 16, -- ~60fps
-          events = {
-            'WinEnter',
-            'BufEnter',
-            'BufWritePost',
-            'SessionLoadPost',
-            'FileChangedShellPost',
-            'VimResized',
-            'Filetype',
-            'CursorMoved',
-            'CursorMovedI',
-            'ModeChanged',
-          },
+      }
+    },
+    sections = {
+      lualine_a = {
+        {
+          'mode',
+          color = { fg = '#000000', bg = '#FF8800' },
+          separator = { right = '' },
         }
       },
-      sections = {
-        lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
-        -- 修改这里：在 y 区域添加虚拟环境显示，保留 progress
-        lualine_y = { 
-          { 
-            python_env, 
-            color = { fg = '#FFE082' } -- 给它一个淡黄色，更醒目
-          }, 
-          'progress' 
-        },
-        lualine_z = {'location'}
+      lualine_b = {'branch', 'diff', 'diagnostics'},
+      lualine_c = {'filename'},
+      lualine_x = {'encoding', 'filetype'},
+      -- 修改这里：在 y 区域添加虚拟环境显示，保留 progress
+      lualine_y = { 
+        { 
+          python_env, 
+          color = { fg = '#FFE082' } -- 给它一个淡黄色，更醒目
+        }, 
+        'progress' 
       },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
-        lualine_y = {},
-        lualine_z = {}
-      },
-      tabline = {},
-      winbar = {},
-      inactive_winbar = {},
-      extensions = {}
-    }
+      lualine_z = {'location'}
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {'filename'},
+      lualine_x = {'location'},
+      lualine_y = {},
+      lualine_z = {}
+    },
+    tabline = {},
+    winbar = {},
+    inactive_winbar = {},
+    extensions = {}
+  }
   end,
 }
