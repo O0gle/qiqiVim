@@ -8,10 +8,10 @@ vim.api.nvim_set_keymap('t', 'jj', '<C-\\><C-n>', { noremap = true, silent = tru
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('i', '<C-h>', '<left>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-l>', '<right>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-j>', '<down>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-k>', '<up>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-h>', '<left>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-l>', '<right>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-j>', '<down>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-k>', '<up>', { noremap = true, silent = true })
 
 
 -- 将 <C-n> 映射为打开/关闭 nvim-tree
